@@ -43,9 +43,30 @@ string Card::rankString(int r) const {
 }
 
 bool Card::operator==(const Card &rhs) const {
-    return false;
+    if(this->myRank == rhs.myRank)
+    {
+        if(this->mySuit == rhs.mySuit)
+        {
+            return true;
+        }
+    }
+    else
+    {
+        return false;
+    }
 }
 
 bool Card::operator!=(const Card &rhs) const {
-    return false;
+    if(this->myRank != rhs.myRank)
+    {
+        return true;
+    }
+    if(this->mySuit != rhs.mySuit)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }

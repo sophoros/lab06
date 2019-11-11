@@ -18,7 +18,16 @@ Deck::Deck() {
 }
 
 void Deck::shuffle() {
-
+    for(int card = 0; card < (52 - myIndex); card++)
+    {
+        int random = rand() % (52 - myIndex);
+        if(random != card)
+        {
+            Card temp = myCards[card];
+            myCards[card] = myCards[random];
+            myCards[random] = temp;
+        }
+    }
 }
 
 Card Deck::dealCard() {
