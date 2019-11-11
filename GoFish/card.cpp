@@ -50,7 +50,10 @@ bool Card::operator==(const Card &rhs) const {
             return true;
         }
     }
-    return false;
+    else
+    {
+        return false;
+    }
 }
 
 bool Card::operator!=(const Card &rhs) const {
@@ -58,5 +61,12 @@ bool Card::operator!=(const Card &rhs) const {
     {
         return true;
     }
-    return this->mySuit != rhs.mySuit;
+    if(this->mySuit != rhs.mySuit)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }
