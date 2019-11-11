@@ -56,7 +56,11 @@ string Player::showBooks() const {
 }
 
 int Player::getHandSize() const {
-    return myHand.size();
+    int hand = 0;
+    for (auto i : myHand) {
+        hand ++;
+    }
+    return hand;
 }
 
 int Player::getBookSize() const {
