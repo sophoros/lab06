@@ -44,7 +44,11 @@ Card Player::removeCardFromHand(Card c) {
 }
 
 string Player::showHand() const {
-    return std::__cxx11::string();
+    string hand;
+    for (auto i : myHand) {
+        hand += i.toString();
+    }
+    return hand;
 }
 
 string Player::showBooks() const {
