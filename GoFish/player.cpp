@@ -10,7 +10,10 @@ void Player::addCard(Card c) {
 }
 
 void Player::bookCards(Card c1, Card c2) {
-
+    myBook.push_back(c1);
+    myBook.push_back(c2);
+    removeCardFromHand(c1);
+    removeCardFromHand(c2);
 }
 
 bool Player::checkHandForBook(Card &c1, Card &c2) {
@@ -33,7 +36,6 @@ bool Player::rankInHand(Card c) const {
         }
     }
     return false;
-
 }
 
 Card Player::chooseCardFromHand() const {
@@ -54,9 +56,10 @@ Card Player::removeCardFromHand(Card c) {
     for (int i = 0; i < myHand.size(); ++i) {
         if (myHand.at(i) == c){
             myHand.erase(myHand.begin() + i);
+            return c;
         }
     }
-    return c;
+    return Card(0,Card::spades);    //error card
 }
 
 string Player::showHand() const {
