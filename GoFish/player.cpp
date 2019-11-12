@@ -59,7 +59,7 @@ Card Player::removeCardFromHand(Card c) {
             return c;
         }
     }
-    return Card(0,Card::spades);    //error card
+    return {0,Card::spades};    //error card
 }
 
 string Player::showHand() const {
