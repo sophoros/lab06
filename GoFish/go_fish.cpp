@@ -143,8 +143,8 @@ void dealHand(Deck &d, Player &p, int numCards)
         {
             temp = d.dealCard();
             p.addCard(temp);
+            cout << p.getName() << " draws " << temp.toString() << endl;
         }
-        cout << p.getName() << " draws " << temp.toString() << endl;
     }
 }
 
