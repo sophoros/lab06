@@ -14,11 +14,26 @@ void Player::bookCards(Card c1, Card c2) {
 }
 
 bool Player::checkHandForBook(Card &c1, Card &c2) {
+    for (int i = 0; i < myHand.size() - 1; ++i) {
+        for (int j = i + 1; j < myHand.size(); ++j) {
+            if (myHand[i].getRank() == myHand[j].getRank()){
+                c1 = myHand[i];
+                c2 = myHand[j];
+                return true;
+            }
+        }
+    }
     return false;
 }
 
 bool Player::rankInHand(Card c) const {
+    for (auto i : myHand){
+        if (i.getRank() == c.getRank()) {
+            return true;
+        }
+    }
     return false;
+
 }
 
 Card Player::chooseCardFromHand() const {
