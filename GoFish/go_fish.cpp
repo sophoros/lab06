@@ -82,7 +82,7 @@ int main( )
         c1 = p2.chooseCardFromHand();
         cout << p2.getName() << "asks - Do you have a " << c1.getRank();
 
-        bool fish = false;
+        fish = false;
         if(p2.cardInHand(c1))
         {
             cout << p1.getName() << "says - Yes. I have a " << c1.rankString(c1.getRank());
