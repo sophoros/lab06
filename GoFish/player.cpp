@@ -68,17 +68,17 @@ string Player::showHand() const {
 }
 
 string Player::showBooks() const {
-    return std::__cxx11::string();
+    string books;
+    for (auto i : myBook) {
+        books += i.toString();
+    }
+    return books;
 }
 
 int Player::getHandSize() const {
-    int hand = 0;
-    for (auto i : myHand) {
-        hand ++;
-    }
-    return hand;
+    return myHand.size();
 }
 
 int Player::getBookSize() const {
-    return 0;
+    return myBook.size();
 }
