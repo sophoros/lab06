@@ -37,7 +37,8 @@ bool Player::rankInHand(Card c) const {
 }
 
 Card Player::chooseCardFromHand() const {
-
+    int random = rand() % myHand.size();
+    return myHand[random];
 }
 
 bool Player::cardInHand(Card c) const {
