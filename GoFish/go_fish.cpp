@@ -80,7 +80,7 @@ int main( )
             cout << p2.getName() << " asks - Do you have a " << c1.rankString(c1.getRank()) << endl;
 
             bool fish = false;
-            if (p2.cardInHand(c1)) {
+            if (p1.cardInHand(c1)) {
                 cout << p1.getName() << " says - Yes. I have a " << c1.rankString(c1.getRank()) << endl;
                 fish = false;
             } else {
@@ -143,8 +143,8 @@ void dealHand(Deck &d, Player &p, int numCards)
         {
             temp = d.dealCard();
             p.addCard(temp);
+            cout << p.getName() << " draws " << temp.toString() << endl;
         }
-        cout << p.getName() << " draws " << temp.toString() << endl;
     }
 }
 
