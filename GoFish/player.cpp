@@ -45,7 +45,7 @@ Card Player::chooseCardFromHand() const {
 
 bool Player::cardInHand(Card c) const {
     for (auto i : myHand) {
-        if (i == c){
+        if (i.getRank() == c.getRank()){
             return true;
         }
     }
@@ -54,9 +54,11 @@ bool Player::cardInHand(Card c) const {
 
 Card Player::removeCardFromHand(Card c) {
     for (int i = 0; i < myHand.size(); ++i) {
-        if (myHand.at(i) == c){
+        if (myHand[i].getRank() == c.getRank()){
+            Card temp;
+            temp = myHand[i];
             myHand.erase(myHand.begin() + i);
-            return c;
+            return temp;
         }
     }
     return {0,Card::spades};    //error card

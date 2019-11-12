@@ -51,8 +51,8 @@ int main( )
                 dealHand(d, p1, 1);
             }
             if (!fish) {
-                p2.removeCardFromHand(c1);
-                p1.addCard(c1);
+                c2 = p2.removeCardFromHand(c1);
+                p1.addCard(c2);
             }
 
             if (p1.checkHandForBook(c1, c2)) {
@@ -80,7 +80,7 @@ int main( )
             cout << p2.getName() << " asks - Do you have a " << c1.rankString(c1.getRank()) << endl;
 
             bool fish = false;
-            if (p2.cardInHand(c1)) {
+            if (p1.cardInHand(c1)) {
                 cout << p1.getName() << " says - Yes. I have a " << c1.rankString(c1.getRank()) << endl;
                 fish = false;
             } else {
@@ -92,8 +92,8 @@ int main( )
                 dealHand(d, p2, 1);
             }
             if (!fish) {
-                p1.removeCardFromHand(c1);
-                p2.addCard(c1);
+                c2 = p1.removeCardFromHand(c1);
+                p2.addCard(c2);
             }
 
             /*if(p1.checkHandForBook(c1, c2))
