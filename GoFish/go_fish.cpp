@@ -30,10 +30,10 @@ int main( )
     Card c1, c2;
     int books = 0;
 
-    while(d.size() != 0 && books < 26)
+    while(d.size() != 0 || books < 26)
     {
         c1 = p1.chooseCardFromHand();
-        cout << p1.getName() << " asks - Do you have a " << c1.getRank() << endl;
+        cout << p1.getName() << " asks - Do you have a " << c1.rankString(c1.getRank()) << endl;
 
         bool fish = false;
         if(p2.cardInHand(c1))
@@ -60,18 +60,20 @@ int main( )
         if(p1.checkHandForBook(c1, c2))
         {
             cout << p1.getName() << " books the " << c1.getRank() << endl;
+            p1.bookCards(c1, c2);
             books++;
         }
         if(p2.checkHandForBook(c1, c2))
         {
             cout << p2.getName() << " books the " << c1.getRank() << endl;
+            p2.bookCards(c1, c2);
             books++;
         }
 
         cout << endl;
 
         c1 = p2.chooseCardFromHand();
-        cout << p2.getName() << " asks - Do you have a " << c1.getRank() << endl;
+        cout << p2.getName() << " asks - Do you have a " << c1.rankString(c1.getRank()) << endl;
 
         fish = false;
         if(p2.cardInHand(c1))
@@ -98,11 +100,13 @@ int main( )
         if(p1.checkHandForBook(c1, c2))
         {
             cout << p1.getName() << " books the " << c1.getRank() << endl;
+            p1.bookCards(c1, c2);
             books++;
         }
         if(p2.checkHandForBook(c1, c2))
         {
             cout << p2.getName() << " books the " << c1.getRank() << endl;
+            p2.bookCards(c1, c2);
             books++;
         }
 
