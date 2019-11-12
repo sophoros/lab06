@@ -109,6 +109,19 @@ int main( )
         cout << endl;
     }
 
+    if(p1.getBookSize() > p2.getBookSize())
+    {
+        cout << p1.getName() << " Wins!" << endl;
+    }
+    if(p2.getBookSize() > p1.getBookSize())
+    {
+        cout << p2.getName() << " Wins!" << endl;
+    }
+    if(p1.getBookSize() == p2.getBookSize())
+    {
+        cout << "It's a Tie!" << endl;
+    }
+
     cout << books;
     return EXIT_SUCCESS;
 }
@@ -116,12 +129,15 @@ int main( )
 void dealHand(Deck &d, Player &p, int numCards)
 {
     Card temp;
-    for (int i=0; i < numCards; i++)
+    if(d.size() > 0)
     {
-        temp = d.dealCard();
-        p.addCard(temp);
+        for (int i=0; i < numCards; i++)
+        {
+            temp = d.dealCard();
+            p.addCard(temp);
+        }
+        cout << p.getName() << " draws " << temp.toString() << endl;
     }
-    cout << p.getName() << " draws " << temp.toString() << endl;
 }
 
 
